@@ -1,0 +1,46 @@
+.home-container {
+    padding: 30px;
+    text-align: left;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.features-section {
+    margin-top: 20px;
+}
+
+.features-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.features-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.feature-link {
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: bold;
+}
+
+.feature-link:hover {
+    text-decoration: underline;
+}
