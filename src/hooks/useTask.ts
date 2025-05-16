@@ -9,7 +9,7 @@ const useTask = () => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await fetch("http://localhost:8081/api/v1/tasks", {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}/v1/tasks`, {
                     headers: {
                         "Content-Type": "application/json",
                         ...authHeader()
