@@ -10,6 +10,8 @@ import './styles/App.css';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import AddTask from './components/AddTask';
+import EditTask from './components/EditTask';
+
 const AppRoutes: React.FC = () => {
   return (
     <Router>
@@ -27,6 +29,7 @@ const AppRoutes: React.FC = () => {
               <Route path="/signup" element={<RegisterForm />} />
               <Route path="/AddTask" element={<AddTask />} />
               <Route path="*" element={<NotFoundPage />} />
+              <Route path="/EditTask/:id" element={<EditTask />} />
             </Routes>
           </div>
         </div>

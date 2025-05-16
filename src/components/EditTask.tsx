@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/AddTask.css';
 import Category from '../types/Category';
-import { useNavigate } from 'react-router-dom';
-import createTaskApi from '../hooks/createTask';
-import categoriesTask from '../hooks/categoriTask';
+import { useNavigate, useParams } from 'react-router-dom';
+import { fetchTaskById, fetchAllCategories, updateTaskById } from '../hooks/editTask';
+import UpdateTaskById from '../types/updatedTask';
 
-const AddTask: React.FC = () => {
+const EditTask: React.FC = () => {
+    const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
+    const [task, setTask] = useState<any>(null);
+    const [categories, setCategories] = useState<Category[]>([]);
     const [title, setTitle] = useState('');
     const [note, setNote] = useState('');
     const [completed, setCompleted] = useState(false);
     const [deadline, setDeadline] = useState('');
     const [status, setStatus] = useState('MEDIUM');
     const [categoryId, setCategoryId] = useState('');
-    const [categories, setCategories] = useState<Category[]>([]);
     const [successMessage, setSuccessMessage] = useState('');
-    const navigate = useNavigate();
 
     useEffect(() => {
-        categoriesTask()
-            .then(data => setCategories(data))
-            .catch(() => setCategories([]));
-    }, []);
+        if (id) {
+            fetchTaskById(
+                id,
+                setTask,
+                setTitle,
+                setNote,
+                setCompleted,
+                setDeadline,
+                setStatus,
+                setCategoryId
+            );
+            fetchAllCategories(setCategories);
+        }
+    }, [id]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const newTask = {
+        const updatedTask: UpdateTaskById = {
             title,
             note,
             completed,
@@ -34,27 +46,25 @@ const AddTask: React.FC = () => {
         };
 
         try {
-            const response = await createTaskApi(newTask);
+            const response = await updateTaskById(id as string, updatedTask);
             if (response.ok) {
-                setSuccessMessage('Task added successfully!');
-                setTitle('');
-                setNote('');
-                setCompleted(false);
-                setDeadline('');
-                setStatus('MEDIUM');
-                setCategoryId('');
-                navigate('/TaskManagement');
+                setSuccessMessage('Task updated successfully!');
+                setTimeout(() => navigate('/TaskManagement'), 1000);
             } else {
-                setSuccessMessage('Failed to add task!');
+                setSuccessMessage('Failed to update task!');
             }
         } catch (error) {
-            alert('Error adding task!');
+            alert('Error updating task!');
         }
     };
 
+    if (!task) {
+        return <div style={{ padding: 24 }}>Loading...</div>;
+    }
+
     return (
         <div className="add-task-form">
-            <h2>Add New Task</h2>
+            <h2>Edit Task</h2>
             {successMessage && (
                 <div className="success-message">{successMessage}</div>
             )}
@@ -124,11 +134,10 @@ const AddTask: React.FC = () => {
                         onChange={e => setCompleted(e.target.checked)}
                     />
                 </div>
-
-                <button type="submit" onClick={handleSubmit}>Add Task</button>
+                <button type="submit">Update Task</button>
             </form>
         </div>
     );
 };
 
-export default AddTask;
+export default EditTask;
