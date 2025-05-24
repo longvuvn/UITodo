@@ -1,5 +1,5 @@
 import React from "react";
-import AuthService from "../service/auth.service";
+import AuthService from "../../service/auth.service";
 import { AxiosError } from "axios";
 
 interface LoginResponse {

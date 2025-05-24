@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/RegisterForm.css";
-import useRegister from "../hooks/useRegister"; // Import custom hook
+import "../../styles/auth/RegisterForm.css";
+import useRegister from "../../hooks/auth/useRegister"; // Import custom hook
 import { Link } from "react-router-dom";
 
 const RegisterForm: React.FC = () => {

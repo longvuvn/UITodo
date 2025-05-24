@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Task from "../types/Task";
-import { authHeader } from "../service/auth-header"; // Thêm dòng này
+import Task from "../../types/Task";
+import { authHeader } from "../../service/auth-header"; // Thêm dòng này
 
 const useTask = () => {
     const [tasks, setTasks] = useState<Task[]>([]);

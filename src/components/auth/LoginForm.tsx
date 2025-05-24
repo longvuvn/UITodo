@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/LoginForm.css"; // Import CSS vào
-import useLogin from "../hooks/useLogin";
+import "../../styles/auth/LoginForm.css"; // Import CSS vào
+import useLogin from "../../hooks/auth/useLogin";
 import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm: React.FC = () => {

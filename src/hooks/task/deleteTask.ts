@@ -1,4 +1,4 @@
-import { authHeader } from '../service/auth-header';
+import { authHeader } from '../../service/auth-header';
 
 const deleteTaskById = async (id: string) => {
     return fetch(`${import.meta.env.VITE_API_URL}/v1/tasks/${id}`, {
@@ -11,3 +11,5 @@ const deleteTaskById = async (id: string) => {
 };
 
 export default deleteTaskById;
+
+

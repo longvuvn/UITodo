@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/HomePage.css'; // Import CSS riêng
+import '../styles/page/HomePage.css'; // Import CSS riêng
 
 const HomePage: React.FC = () => {
     return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "../styles/TaskManagementPage.css";
-import TaskList from "../components/TaskList";
+import "../styles/page/TaskManagementPage.css";
+import TaskList from "../components/task/TaskList";
 import { useNavigate } from "react-router-dom";
-import useTask from "../hooks/useTask";
+import useTask from "../hooks/task/useTask";
 import Task from "../types/Task";
 
 const TaskManagementPage: React.FC = () => {
     const navigate = useNavigate();
-    const { tasks: initialTasks, error } = useTask();
+    const { tasks: initialTasks } = useTask();
     const [tasks, setTasks] = useState<Task[]>([]);
 
     useEffect(() => {
@@ -26,8 +26,6 @@ const TaskManagementPage: React.FC = () => {
         <div className="task-management-page">
             <div className="task-header">
                 <h1>Task Management</h1>
-                {error && <p className="error-message">{error}</p>}
-                <p>Efficiently manage and organize your tasks.</p>
             </div>
             <button className="add-task-button" onClick={handleAddTaskClick}>+ Add New Task</button>
             <TaskList tasks={tasks} onDelete={handleDelete} />

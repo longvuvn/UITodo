@@ -5,12 +5,12 @@ import NotFoundPage from './pages/NotFoundPage';
 import TaskManagementPage from './pages/TaskManagementPage'; // Import TaskManagementPage
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/layout/Dashboard';
 import './styles/App.css';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
-import AddTask from './components/AddTask';
-import EditTask from './components/EditTask';
+import LoginForm from './components/auth/LoginForm';
+import RegisterForm from './components/auth/RegisterForm';
+import AddTask from './components/task/AddTask';
+import EditTask from './components/task/EditTask';
 
 const AppRoutes: React.FC = () => {
   return (

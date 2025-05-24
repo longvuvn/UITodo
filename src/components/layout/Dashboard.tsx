@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Dashboard.css';
+import '../../styles/layout/Dashboard.css';
 
 const Dashboard: React.FC = () => {
     return (
-        <div className="dashboard">
-            <h1>Dashboard</h1>
+        <div className="dashboard-container">
+            <h1 className="dashboard-title">📊 Dashboard</h1>
             <nav className="dashboard-nav">
                 <Link to="/" className="dashboard-link">
-                    Home
+                    🏠 Home
                 </Link>
                 <Link to="/TaskManagement" className="dashboard-link">
-                    Tasks
+                    ✅ Task Management
                 </Link>
             </nav>
         </div>
