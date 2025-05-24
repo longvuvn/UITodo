@@ -1,6 +1,7 @@
-import categoriesTask from './categoriTask';
-import { authHeader } from '../service/auth-header';
-import UpdateTaskById from '../types/updatedTask';
+import { authHeader } from '../../service/auth-header';
+import Category from '../../types/Category';
+import UpdateTaskById from '../../types/UpdatedTask';
+
 
 
 export const fetchTaskById = async (
@@ -29,12 +30,32 @@ export const fetchTaskById = async (
     setCategoryId(data.category?.id || '');
 };
 
-export const fetchAllCategories = async (setCategories: any) => {
+export const fetchAllCategories = async (setCategories: React.Dispatch<React.SetStateAction<Category[]>>) => {
     try {
-        const data = await categoriesTask();
-        setCategories(data);
-    } catch {
-        setCategories([]);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/v1/categories`, {
+            headers: {
+                'Content-Type': 'application/json',
+                ...authHeader()
+            } as HeadersInit
+        });
+
+        if (!response.ok) {
+            throw new Error(`Không thể lấy danh mục: ${response.status}`);
+        }
+
+        const apiResponse = await response.json();
+        console.log("Dữ liệu danh mục nhận được:", apiResponse);
+
+        // Kiểm tra cấu trúc phản hồi và trích xuất dữ liệu phù hợp
+        if (apiResponse && apiResponse.data && Array.isArray(apiResponse.data)) {
+            setCategories(apiResponse.data);
+        } else {
+            console.error('Định dạng dữ liệu danh mục không đúng:', apiResponse);
+            setCategories([]);
+        }
+    } catch (error) {
+        console.error('Lỗi khi lấy danh mục:', error);
+        setCategories([]); // Thiết lập mảng rỗng khi có lỗi
     }
 };
 

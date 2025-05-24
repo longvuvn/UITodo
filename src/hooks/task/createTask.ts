@@ -1,5 +1,5 @@
-import { authHeader } from "../service/auth-header";
-import CreateTaskInput from "../types/CreateTaskInput";
+import { authHeader } from "../../service/auth-header";
+import CreateTaskInput from "../../types/CreateTaskInput";
 
 
 const createTaskApi = async (task: CreateTaskInput): Promise<Response> => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/DeleteTask.css";
+import "../../styles/task/DeleteTask.css";
 interface DeleteTaskProps {
     onConfirm: () => void;
     onCancel: () => void;

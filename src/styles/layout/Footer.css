@@ -1,0 +1,128 @@
+src\styles\layout\Footer.css */ .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 0;
+    width: 100%;
+    margin-top: auto;
+    ;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #4caf50;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #4caf50;
+}
+
+.footer-description {
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.footer-links,
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.footer-contact-info li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact-info a:hover {
+    color: #4caf50;
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact-info i {
+    margin-right: 10px;
+    color: #4caf50;
+    width: 16px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #333;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #4caf50;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    background-color: #111;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}

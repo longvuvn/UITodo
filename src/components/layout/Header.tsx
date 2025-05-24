@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Header.css"; // Import CSS vào
+import "../../styles/layout/Header.css"; // Import CSS vào
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {

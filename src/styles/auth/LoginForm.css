@@ -1,0 +1,173 @@
+/* Container ngoài cùng */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    padding: 2rem;
+}
+
+/* Box đăng nhập */
+.login-box {
+    background-color: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Tiêu đề */
+.login-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Nhóm input */
+.form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    color: #333;
+}
+
+.form-group input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+    outline: none;
+}
+
+/* Nút login */
+.login-button1 {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button1:hover {
+    background-color: #43a047;
+    transform: translateY(-1px);
+}
+
+.login-button1:active {
+    transform: scale(0.98);
+}
+
+/* Lỗi đăng nhập */
+.error-message {
+    color: #e53935;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Đường link đăng ký */
+.signup-link {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.signup-link a {
+    color: #2e7d32;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .login-container {
+        background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+    }
+
+    .login-box {
+        background-color: #2a2a2a;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .login-box h2,
+    .subtitle,
+    .form-group label,
+    .signup-link,
+    .signup-link a {
+        color: #f0f0f0;
+    }
+
+    .form-group input {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        border-color: #444;
+    }
+
+    .form-group input:focus {
+        border-color: #81c784;
+        box-shadow: 0 0 0 3px rgba(129, 199, 132, 0.2);
+    }
+
+    .error-message {
+        color: #ef5350;
+    }
+
+    .login-button1 {
+        background-color: #66bb6a;
+    }
+
+    .login-button1:hover {
+        background-color: #57a05a;
+    }
+}

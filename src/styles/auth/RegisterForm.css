@@ -1,0 +1,195 @@
+/* ============ GLOBAL RESET ============ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ============ CONTAINER ============ */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+    padding: 2rem;
+}
+
+/* ============ REGISTER BOX ============ */
+.register-box {
+    background-color: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Heading */
+.register-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1565c0;
+    margin-bottom: 0.4rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* ============ FORM & FIELDS ============ */
+form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.4rem;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #42a5f5;
+    box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.15);
+    outline: none;
+}
+
+/* ============ BUTTON ============ */
+.register-button1 {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.register-button1:hover {
+    background-color: #1565c0;
+    transform: translateY(-1px);
+}
+
+.register-button1:active {
+    transform: scale(0.98);
+}
+
+/* ============ MESSAGE ============ */
+.error-message {
+    color: #e53935;
+    font-size: 0.95rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.success-message {
+    color: #43a047;
+    font-size: 0.95rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* ============ LOGIN LINK ============ */
+.login-link {
+    margin-top: 1.8rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.login-link a {
+    color: #1565c0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 480px) {
+    .register-box {
+        padding: 2rem 1.2rem;
+    }
+
+    .register-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+    }
+}
+
+/* ============ DARK MODE ============ */
+@media (prefers-color-scheme: dark) {
+    .register-container {
+        background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    }
+
+    .register-box {
+        background-color: #2a2a2a;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .register-box h2,
+    .subtitle,
+    .form-group label,
+    .login-link,
+    .login-link a {
+        color: #f0f0f0;
+    }
+
+    .form-group input {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        border-color: #555;
+    }
+
+    .form-group input:focus {
+        border-color: #64b5f6;
+        box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.2);
+    }
+
+    .error-message {
+        color: #ef5350;
+    }
+
+    .success-message {
+        color: #81c784;
+    }
+
+    .register-button1 {
+        background-color: #42a5f5;
+    }
+
+    .register-button1:hover {
+        background-color: #2196f3;
+    }
+}
