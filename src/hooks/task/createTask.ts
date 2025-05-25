@@ -3,7 +3,7 @@ import CreateTaskInput from "../../types/CreateTaskInput";
 
 
 const createTaskApi = async (task: CreateTaskInput): Promise<Response> => {
-    return fetch(`${import.meta.env.VITE_API_URL}/v1/create_tasks`, {
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/tasks/create_tasks`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
